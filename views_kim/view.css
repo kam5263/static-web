@@ -114,7 +114,7 @@ main {
 .wrap_item{
     display: block;
 }
-.wrap_item ul li {
+.wrap_item > ul > li {
     display: list-item;
     width: calc(25% - 17px);
     height: 500px;
@@ -122,7 +122,7 @@ main {
     position: relative;
     float: left;
 }
-.wrap_item ul li a img {
+.wrap_item > ul > li > a > img {
     height: 380px;
 }
 .info span {
@@ -173,14 +173,45 @@ main {
     margin-bottom: 40px;
     color: salmon;
 }
-.box {
-    border: 1px solid slategray;
+.dropdowns {
+    background-color: seashell;
     width: 100%;
     height: 50px;
     line-height: 50px; /*height와 같은 높이를 주면 세로중앙정렬이 가능해진다.*/
     text-align:  center;
     margin-bottom: 10px;
-    color: grey
+    color: grey;
+    position: relative;
+}
+.dropdowns:hover, .dropdowns:focus {
+    background-color: lightpink;
+}
+.dropbtn:visited {
+    color: grey;
+}
+.dropdown-content {
+    position: relative;
+}
+.dropdown-content > .dropdetails {
+    position: relative;
+    display: inline-block;
+    z-index: 1; /*z-index는 position 속성없이 동작하지 않는다.*/
+    visibility: hidden;
+    opacity: 0;
+    background-color: gainsboro;
+    width: 100%;
+    height: 50px;
+    line-height: 50px; /*height와 같은 높이를 주면 세로중앙정렬이 가능해진다.*/
+    text-align:  center;
+    color: grey;
+}
+/* show the dropdown menu using JS  */
+.show > .dropdetails {
+    visibility: visible;
+    opacity: 1;
+}
+.dropdown-content > a:hover {
+    background-color: honeydew;
 }
 .regist {
     display: block;
@@ -206,4 +237,36 @@ main {
     color: salmon;
     border-bottom: 2px solid rgba(250, 128, 114, 0.74);
     padding: 0 45px 10px 45px
-}   
+}
+.form_wrap{
+    margin: 30px 0 0 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+    display: block;
+    width: 480px;
+}
+.form_wrap form ul li {
+    display: table;
+    width: 100%;
+}
+input[type=text] {
+    width: 100%;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+    box-sizing: content-box;   
+}
+.id {
+    display: table-cell;
+    width: 100px;
+    vertical-align: middle;
+    color: #8e8e8e;
+}
+#btn-submit {
+    margin-top: 30px;
+    margin-left: 195px;
+}

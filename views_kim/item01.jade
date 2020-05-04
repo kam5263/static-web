@@ -3,15 +3,21 @@ html
     meta(charset='utf-8')
     style
         include view.css
+    script
+        include dropdown.js
 body
     header 
         h1
             a(href='/' class = 'title') VEGAN FASION
         ul
-          li(class='category') ABOUT
-          li(class='category') 회원가입
-          li(class='category') 로그인
-          li(class='category') 마이페이지  
+          li(class='category')
+            a(href='/about') ABOUT
+          li(class='category')
+            a(href='/signin') 회원가입
+          li(class='category') 
+            a(href='/') 로그인
+          li(class='category')
+            a(href='/') 마이페이지  
     section
         nav
             a(href='/')
@@ -43,8 +49,13 @@ body
                 div(class='wrap_tag')
                     h1 비건 가죽 자켓
                     h2 270,000
-                    div(class='box') 사이즈
-                    div(class='box') 수량
+                    div(class = 'dropdowns')
+                        a(class = 'dropbtn' href='#') 사이즈
+                            div(id='myDropdown' class='dropdown-content')
+                                a(href='#' class='dropdetails' id='s') S
+                                a(href='#' class='dropdetails' id='m') M
+                                a(href='#' class='dropdetails' id='l') L
+                    div(class='dropdowns') 수량
                     div(class='regist')
                         div(id='re1') 찜하기
                         div(id='re2') 공유하기
