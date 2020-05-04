@@ -30,6 +30,9 @@ app.get('/', (req, res)=>{
 app.get('/about', (req, res)=>{
     res.render('about.jade');
 });
+app.get('/signin', (req, res)=>{
+    res.render('signin.jade');
+});
 app.get('/w_all', (req, res)=>{
     res.render('w_all.jade');
 });
@@ -45,3 +48,7 @@ app.get('/w_bottom', (req,res)=>{
 app.get('/w_outer/item01', (req,res)=>{
     res.render('item01.jade')
 });
+// 일단 db랑 연동하는거 안배웠으니까, 여기까지. 연동 후 회원가입, 로그인 구현
+app.post('/signin', (req,res)=>{
+    res.redirect('/signin');
+})
